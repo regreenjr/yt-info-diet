@@ -1,0 +1,28 @@
+# Sensitive / runtime files
+config.yaml
+state.json
+monitor.log
+monitor.error.log
+reports/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

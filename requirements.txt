@@ -1,0 +1,4 @@
+feedparser>=6.0.0
+youtube-transcript-api>=1.2.0
+slack-sdk>=3.27.0
+pyyaml>=6.0

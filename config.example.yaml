@@ -1,0 +1,18 @@
+# YT Info Diet Configuration
+# Copy to config.yaml and customize
+
+check_interval_hours: 12
+max_transcript_chars: 100000
+
+# Slack webhook (or set SLACK_WEBHOOK_URL env var, env var takes precedence)
+slack_webhook_url: ''
+
+# Channels to monitor
+# Use `python3 monitor.py add` to add channels via CLI
+channels: []
+  # Example:
+  # - name: Peter Diamandis
+  #   channel_id: UCvxm0qTrGN_1LMYgUaftWyQ
+  #   tags:
+  #     - ai
+  #     - futurism
