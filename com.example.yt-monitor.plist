@@ -5,9 +5,23 @@
     <key>Label</key>
     <string>com.example.yt-monitor</string>
 
+    <!--
+    CRITICAL: ProgramArguments[0] must be the FULL path to the SAME python3
+    where you ran `pip install -r requirements.txt`. launchd does NOT use
+    your shell's PATH, so /usr/bin/python3 is almost never what you want
+    unless you explicitly installed deps there.
+
+    Find yours with:  which python3   (then use that full path below)
+    Common locations:
+      /opt/anaconda3/bin/python3                  (Anaconda)
+      /opt/homebrew/bin/python3                   (Homebrew Apple Silicon)
+      /usr/local/bin/python3                      (Homebrew Intel)
+      /Users/YOUR_USERNAME/.pyenv/shims/python3   (pyenv)
+    -->
+
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/bin/python3</string>
+        <string>/FULL/PATH/TO/python3</string>
         <string>/Users/YOUR_USERNAME/dev/yt-info-diet/monitor.py</string>
         <string>run</string>
     </array>
@@ -17,8 +31,13 @@
 
     <key>EnvironmentVariables</key>
     <dict>
+        <!--
+        PATH must include the directory containing `claude` and `yt-dlp`.
+        launchd starts with an empty PATH, so if these binaries aren't here
+        they won't be found.
+        -->
         <key>PATH</key>
-        <string>/Users/YOUR_USERNAME/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin</string>
+        <string>/Users/YOUR_USERNAME/.local/bin:/opt/anaconda3/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
         <key>SLACK_WEBHOOK_URL</key>
         <string>YOUR_SLACK_WEBHOOK_URL</string>
         <key>APIFY_TOKEN</key>
